@@ -142,7 +142,7 @@ typedef enum {
     SM_NODEHEAD       = 6,  /**< Node Head */
     SM_LATINFLOW      = 7,  /**< Lateral Inflow Rate */
     SM_HRT	          = 8,   /**< HRT */
-    SM_COUPINFLOW     = 10   /**< Coupling Inflow Rate */
+    SM_COUPINFLOW     = 9   /**< Coupling Inflow Rate */
 } SM_NodeResult;
 
 /// Node pollutant result property codes

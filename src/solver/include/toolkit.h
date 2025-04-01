@@ -651,7 +651,7 @@ EXPORT_TOOLKIT void swmm_freeMemory(void *memory);
  @param Csw    The opening's submerged weir coefficient
  @return Error code
 */
-int DLLEXPORT swmm_setNodeOpening(int nodeID, int idx, int oType, double A,
+EXPORT_TOOLKIT int swmm_setNodeOpening(int nodeID, int idx, int oType, double A,
     double l, double Co, double Cfw, double Csw);
 
 /**
@@ -660,7 +660,7 @@ int DLLEXPORT swmm_setNodeOpening(int nodeID, int idx, int oType, double A,
 @param idx    The index of an opening
 @return Error code
 */
-int DLLEXPORT swmm_openOpening(int nodeID, int idx);
+EXPORT_TOOLKIT int swmm_openOpening(int nodeID, int idx);
 
 /**
 @brief Close an opening.
@@ -668,7 +668,7 @@ int DLLEXPORT swmm_openOpening(int nodeID, int idx);
 @param idx    The index of an opening
 @return Error code
 */
-int DLLEXPORT swmm_closeOpening(int nodeID, int idx);
+EXPORT_TOOLKIT int swmm_closeOpening(int nodeID, int idx);
 
 /**
 @brief Remove an opening from a node.
@@ -676,7 +676,7 @@ int DLLEXPORT swmm_closeOpening(int nodeID, int idx);
 @param idx    The index of an opening
 @return Error code
 */
-int DLLEXPORT swmm_deleteNodeOpening(int nodeID, int idx);
+EXPORT_TOOLKIT int swmm_deleteNodeOpening(int nodeID, int idx);
 
 /**
 @brief Get a node opening's parameter.
@@ -686,7 +686,7 @@ int DLLEXPORT swmm_deleteNodeOpening(int nodeID, int idx);
 @param[out] value The value of the opening's property
 @return Error code
 */
-int DLLEXPORT swmm_getNodeOpeningParam(int nodeID, int idx, int Param, double *value);
+EXPORT_TOOLKIT int swmm_getNodeOpeningParam(int nodeID, int idx, int Param, double *value);
 
 /**
 @brief Get a node opening's inflow rate.
@@ -695,7 +695,7 @@ int DLLEXPORT swmm_getNodeOpeningParam(int nodeID, int idx, int Param, double *v
 @param[out] inflow The inflow rate
 @return Error code
 */
-int DLLEXPORT swmm_getNodeOpeningFlow(int nodeID, int idx, double *inflow);
+EXPORT_TOOLKIT int swmm_getNodeOpeningFlow(int nodeID, int idx, double *inflow);
 
 /**
 @brief Get a node opening's type.
@@ -704,7 +704,7 @@ int DLLEXPORT swmm_getNodeOpeningFlow(int nodeID, int idx, double *inflow);
 @param[out] type The opening type
 @return Error code
 */
-int DLLEXPORT swmm_getNodeOpeningType(int nodeID, int idx, int *type);
+EXPORT_TOOLKIT int swmm_getNodeOpeningType(int nodeID, int idx, int *type);
 
 /**
 @brief Get a node opening's coupling type.
@@ -713,7 +713,7 @@ int DLLEXPORT swmm_getNodeOpeningType(int nodeID, int idx, int *type);
 @param[out] coupling The opening coupling type (from enum @ref OverlandCouplingType)
 @return Error code
 */
-int DLLEXPORT swmm_getOpeningCouplingType(int nodeID, int idx, int *coupling);
+EXPORT_TOOLKIT int swmm_getOpeningCouplingType(int nodeID, int idx, int *coupling);
 
 /**
 @brief Get the number of openings in a node.
@@ -721,7 +721,7 @@ int DLLEXPORT swmm_getOpeningCouplingType(int nodeID, int idx, int *coupling);
 @param[out] num The number of openings in the given node.
 @return Error code
 */
-int DLLEXPORT swmm_getOpeningsNum(int nodeID, int *num);
+EXPORT_TOOLKIT int swmm_getOpeningsNum(int nodeID, int *num);
 
 /**
 @brief Get the indices of all the openings in a node.
@@ -730,7 +730,7 @@ int DLLEXPORT swmm_getOpeningsNum(int nodeID, int *num);
 @param[out] arr An array of the openings indices
 @return Error code
 */
-int DLLEXPORT swmm_getOpeningsIndices(int nodeID, int arr_size, int *arr);
+EXPORT_TOOLKIT int swmm_getOpeningsIndices(int nodeID, int arr_size, int *arr);
 
 /**
 @brief Get the coupling status of a node.
@@ -738,7 +738,30 @@ int DLLEXPORT swmm_getOpeningsIndices(int nodeID, int arr_size, int *arr);
 @param[out] iscoupled The coupling status of the node.
 @return Error code
 */
-int DLLEXPORT swmm_getNodeIsCoupled(int nodeID, int *iscoupled);
+EXPORT_TOOLKIT int swmm_getNodeIsCoupled(int nodeID, int *iscoupled);
+
+/**
+@brief Close an opening.
+@param nodeID The index of a node
+@param idx    The index of an opening
+@return Error code
+*/
+EXPORT_TOOLKIT int swmm_closeOpening(int nodeID, int idx);
+
+/**
+@brief Open an opening.
+@param nodeID The index of a node
+@param idx    The index of an opening
+@return Error code
+*/
+EXPORT_TOOLKIT int swmm_openOpening(int nodeID, int idx);
+
+/**
+@brief Remove all openings from a node.
+@param nodeID The index of a node
+@return Error code
+*/
+EXPORT_TOOLKIT int swmm_deleteNodeOpenings(int nodeID);
 
 /**
 @brief Determine the coupling type of an opening according the the relative water elevations in the node and the surface
@@ -749,7 +772,7 @@ int DLLEXPORT swmm_getNodeIsCoupled(int nodeID, int *iscoupled);
 @param weirWidth weir width (ft)
 @return Error code
 */
-int EXPORT_TOOLKIT swmm_couplingType(double crestElev, double nodeHead,
+EXPORT_TOOLKIT int swmm_couplingType(double crestElev, double nodeHead,
     double overlandHead, double overflowArea, double weirWidth);
 
 /**
@@ -765,7 +788,7 @@ int EXPORT_TOOLKIT swmm_couplingType(double crestElev, double nodeHead,
 @param weirWidth
 @return The flow entering through the opening (ft3/s)
 */
-double EXPORT_TOOLKIT swmm_findCouplingInflow(int couplingType, double crestElev,
+EXPORT_TOOLKIT double swmm_findCouplingInflow(int couplingType, double crestElev,
     double nodeHead, double overlandHead, double orificeCoeff, 
     double freeWeirCoeff, double subWeirCoeff, double overflowArea, 
     double weirWidth);
@@ -782,21 +805,13 @@ double EXPORT_TOOLKIT swmm_findCouplingInflow(int couplingType, double crestElev
 @param[out] coupling_NodeInflow node coupling inflow
 @return Error code
 */
-int EXPORT_TOOLKIT swmm_coupling_findNodeInflow(int nodeID, double tStep,
+EXPORT_TOOLKIT int swmm_coupling_findNodeInflow(int nodeID, double tStep,
     double Node_invertElev, double Node_fullDepth, double Node_newDepth, double Node_overlandDepth, 
 	double Node_couplingArea, double* coupling_NodeInflow);
 
-/**
-@brief Remove all openings from a node.
-@param nodeID The index of a node
-@return Error code
-*/
-int EXPORT_TOOLKIT swmm_deleteNodeOpenings(int nodeID);
 
 #ifdef __cplusplus
 }    // matches the linkage specification from above */
 #endif
-
-
 
 #endif // TOOLKIT_H
