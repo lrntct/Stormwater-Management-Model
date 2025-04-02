@@ -111,7 +111,7 @@ BOOST_AUTO_TEST_CASE(model_not_open) {
     error = swmm_openOpening(0, 0);
     BOOST_CHECK_EQUAL(error, ERR_TKAPI_INPUTNOTOPEN); 
 
-    error = swmm_coupling_findNodeInflow(0.0, 0.0, 0.0, 0.0, 0.0, NULL, 0.0, NULL);
+    error = swmm_coupling_findNodeInflow(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, nullptr);
     BOOST_CHECK_EQUAL(error, ERR_TKAPI_INPUTNOTOPEN); 
 
     error = swmm_deleteNodeOpenings(0);

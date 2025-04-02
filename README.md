@@ -39,6 +39,15 @@ See [CONTRIBUTING.md](https://github.com/OpenWaterAnalytics/Stormwater-Managemen
 
 ## OWA-SWMM Testing
 
+Build and run the tests
+```sh
+mkdir build
+cd build
+cmake .. -DBUILD_TESTS=ON
+cmake --build .
+ctest
+```
+
 To run the test suite for please refer to the [REGRESSION_TESTING.md](https://github.com/OpenWaterAnalytics/Stormwater-Management-Model/wiki/Testing-System)
 
 ## Code of Conduct
