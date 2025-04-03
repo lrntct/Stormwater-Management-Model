@@ -76,10 +76,10 @@ EXPORT_TOOLKIT int swmm_getAPIError(int errorCode, char **errorMsg);
 EXPORT_TOOLKIT int swmm_project_findObject(SM_ObjectType type, char *id, int *index);
 
 /**
-@brief Gets Simulation Unit
-@param type Option code (see @ref SM_Units)
-@param[out] value Option value
-@return Error code
+ @brief Gets Simulation Unit
+ @param type Option code (see @ref SM_Units)
+ @param[out] value Option value
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getSimulationUnit(SM_Units type, int *value);
 
@@ -495,11 +495,11 @@ EXPORT_TOOLKIT int swmm_getSubcatchResult(int index, SM_SubcResult type, double 
 EXPORT_TOOLKIT int swmm_getSubcatchPollut(int index, SM_SubcPollut type, double **pollutArray, int *length);
 
 /**
-@brief Get precipitation rates for a gage.
-@param index The index of gage
-@param type The property type code (see @ref SM_GagePrecip)
-@param[out] GageArray precipitation rate
-@return Error code
+ @brief Get precipitation rates for a gage.
+ @param index The index of gage
+ @param type The property type code (see @ref SM_GagePrecip)
+ @param[out] GageArray precipitation rate
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getGagePrecip(int index, SM_GagePrecip type, double *result);
 
@@ -655,138 +655,138 @@ EXPORT_TOOLKIT int swmm_setNodeOpening(int nodeID, int idx, int oType, double A,
     double l, double Co, double Cfw, double Csw);
 
 /**
-@brief Open an opening that was previously closed.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@return Error code
+ @brief Open an opening that was previously closed.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_openOpening(int nodeID, int idx);
 
 /**
-@brief Close an opening.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@return Error code
+ @brief Close an opening.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_closeOpening(int nodeID, int idx);
 
 /**
-@brief Remove an opening from a node.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@return Error code
+ @brief Remove an opening from a node.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_deleteNodeOpening(int nodeID, int idx);
 
 /**
-@brief Get a node opening's parameter.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@param Param  The opening's parameter to be retrieved (from enum @ref OpeningParams)
-@param[out] value The value of the opening's property
-@return Error code
+ @brief Get a node opening's parameter.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @param Param  The opening's parameter to be retrieved (from enum @ref OpeningParams)
+ @param[out] value The value of the opening's property
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getNodeOpeningParam(int nodeID, int idx, int Param, double *value);
 
 /**
-@brief Get a node opening's inflow rate.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@param[out] inflow The inflow rate
-@return Error code
+ @brief Get a node opening's inflow rate.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @param[out] inflow The inflow rate
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getNodeOpeningFlow(int nodeID, int idx, double *inflow);
 
 /**
-@brief Get a node opening's type.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@param[out] type The opening type
-@return Error code
+ @brief Get a node opening's type.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @param[out] type The opening type
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getNodeOpeningType(int nodeID, int idx, int *type);
 
 /**
-@brief Get a node opening's coupling type.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@param[out] coupling The opening coupling type (from enum @ref OverlandCouplingType)
-@return Error code
+ @brief Get a node opening's coupling type.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @param[out] coupling The opening coupling type (from enum @ref OverlandCouplingType)
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getOpeningCouplingType(int nodeID, int idx, int *coupling);
 
 /**
-@brief Get the number of openings in a node.
-@param nodeID The index of a node
-@param[out] num The number of openings in the given node.
-@return Error code
+ @brief Get the number of openings in a node.
+ @param nodeID The index of a node
+ @param[out] num The number of openings in the given node.
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getOpeningsNum(int nodeID, int *num);
 
 /**
-@brief Get the indices of all the openings in a node.
-@param nodeID The index of a node
-@param arr_size The size of the results array (from @ref swmm_getOpeningsNum)
-@param[out] arr An array of the openings indices
-@return Error code
+ @brief Get the indices of all the openings in a node.
+ @param nodeID The index of a node
+ @param arr_size The size of the results array (from @ref swmm_getOpeningsNum)
+ @param[out] arr An array of the openings indices
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getOpeningsIndices(int nodeID, int arr_size, int *arr);
 
 /**
-@brief Get the coupling status of a node.
-@param nodeID The index of a node
-@param[out] iscoupled The coupling status of the node.
-@return Error code
+ @brief Get the coupling status of a node.
+ @param nodeID The index of a node
+ @param[out] iscoupled The coupling status of the node.
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_getNodeIsCoupled(int nodeID, int *iscoupled);
 
 /**
-@brief Close an opening.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@return Error code
+ @brief Close an opening.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_closeOpening(int nodeID, int idx);
 
 /**
-@brief Open an opening.
-@param nodeID The index of a node
-@param idx    The index of an opening
-@return Error code
+ @brief Open an opening.
+ @param nodeID The index of a node
+ @param idx    The index of an opening
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_openOpening(int nodeID, int idx);
 
 /**
-@brief Remove all openings from a node.
-@param nodeID The index of a node
-@return Error code
+ @brief Remove all openings from a node.
+ @param nodeID The index of a node
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_deleteNodeOpenings(int nodeID);
 
 /**
-@brief Determine the coupling type of an opening according the the relative water elevations in the node and the surface
-@param crestElev Crest elevation of the node (ft)
-@param nodeHead Water elevation in the node (ft)
-@param overlandHead Water elevation in the overland model (ft)
-@param overflowArea node surface area (ft2)
-@param weirWidth weir width (ft)
-@return Error code
+ @brief Determine the coupling type of an opening according the the relative water elevations in the node and the surface
+ @param crestElev Crest elevation of the node (ft)
+ @param nodeHead Water elevation in the node (ft)
+ @param overlandHead Water elevation in the overland model (ft)
+ @param overflowArea node surface area (ft2)
+ @param weirWidth weir width (ft)
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_couplingType(double crestElev, double nodeHead,
     double overlandHead, double overflowArea, double weirWidth);
 
 /**
-@brief Computes the coupling flow of the opening.
-@param couplingType 
-@param crestElev 
-@param nodeHead
-@param overlandHead
-@param orificeCoeff
-@param freeWeirCoeff
-@param subWeirCoeff
-@param overflowArea
-@param weirWidth
-@return The flow entering through the opening (ft3/s)
+ @brief Computes the coupling flow of the opening.
+ @param couplingType 
+ @param crestElev 
+ @param nodeHead
+ @param overlandHead
+ @param orificeCoeff
+ @param freeWeirCoeff
+ @param subWeirCoeff
+ @param overflowArea
+ @param weirWidth
+ @return The flow entering through the opening (ft3/s)
 */
 EXPORT_TOOLKIT double swmm_findCouplingInflow(int couplingType, double crestElev,
     double nodeHead, double overlandHead, double orificeCoeff, 
@@ -794,16 +794,16 @@ EXPORT_TOOLKIT double swmm_findCouplingInflow(int couplingType, double crestElev
     double weirWidth);
 
 /**
-@brief Compute the sum of opening coupling inflows at a node.
-@param nodeID The index of a node
-@param tStep time step of the drainage model (s)
-@param Node_invertElev invert elevation (ft)
-@param Node_fullDepth dist. from invert to surface (ft)
-@param Node_newDepth current water depth (ft)
-@param Node_overlandDepth water depth in the overland model (ft)
-@param Node_couplingArea coupling area in the overland model (ft2)
-@param[out] coupling_NodeInflow node coupling inflow
-@return Error code
+ @brief Compute the sum of opening coupling inflows at a node.
+ @param nodeID The index of a node
+ @param tStep time step of the drainage model (s)
+ @param Node_invertElev invert elevation (ft)
+ @param Node_fullDepth dist. from invert to surface (ft)
+ @param Node_newDepth current water depth (ft)
+ @param Node_overlandDepth water depth in the overland model (ft)
+ @param Node_couplingArea coupling area in the overland model (ft2)
+ @param[out] coupling_NodeInflow node coupling inflow
+ @return Error code
 */
 EXPORT_TOOLKIT int swmm_coupling_findNodeInflow(int nodeID, double tStep,
     double Node_invertElev, double Node_fullDepth, double Node_newDepth, double Node_overlandDepth, 
